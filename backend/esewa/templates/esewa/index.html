@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=z, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="setTimeout(function() { document.esewa.submit() }, 50)">
+
+    <form action="{{url}}" method="POST" name="esewa">
+        <input value="{{tAmt}}" name="tAmt" type="hidden">
+        <input value="{{amt}}" name="amt" type="hidden">
+        <input value="{{txAmt}}" name="txAmt" type="hidden">
+        <input value="{{psc}}" name="psc" type="hidden">
+        <input value="{{pdc}}" name="pdc" type="hidden">
+        <input value="{{scd}}" name="scd" type="hidden">
+        <input value="{{pid}}" name="pid" type="hidden">
+        <input value="{{su}}" type="hidden" name="su">
+        <input value="{{fu}}" type="hidden" name="fu">
+        
+    </form>
+
+</body>
+
+</html>

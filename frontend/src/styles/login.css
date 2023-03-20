@@ -1,0 +1,83 @@
+.login-page {
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: #6a62d2;
+}
+
+.login-page .form {
+  position: relative;
+  filter: drop-shadow(0 0 2px #000000);
+  border-radius: 5px;
+  width: 360px;
+  height: 420px;
+  background-color: #ffffff;
+  padding: 40px;
+}
+
+.login-page .form img {
+  position: relative;
+  height: 20px;
+  bottom: 50px;
+  left: 122px;
+  cursor: pointer;
+}
+
+.login-page .form input {
+  outline: 0;
+  background: #f2f2f2;
+  border-radius: 4px;
+  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.login-page .form input:focus {
+  box-shadow: 0 0 5px 0 rgba(106, 98, 210);
+}
+
+.login-page .form button {
+  outline: 0;
+  background: #6a62d2;
+  width: 100%;
+  border: 0;
+  margin-top: 10px;
+  border-radius: 3px;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 15px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.login-page .form button:hover,
+.login-page .form button:active,
+.login-page .form button:focus {
+  background: black;
+  color: #fff;
+}
+
+.login-page .message {
+  margin: 15px 0;
+  text-align: center;
+}
+.login-page .form .message a {
+  font-size: 14px;
+  color: #6a62d2;
+  text-decoration: none;
+}
+
+.show-password-div {
+  position: absolute;
+  top: 195px;
+  right: 55px;
+}
+
+.show-password-div:hover {
+  cursor: pointer;
+}

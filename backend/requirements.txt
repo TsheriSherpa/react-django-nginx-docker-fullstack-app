@@ -1,0 +1,11 @@
+django==4.0.6
+python-dotenv==0.20.0
+PyMySQL==0.10.0
+mysqlclient==2.1.1
+djangorestframework==3.13.1
+autopep8==1.6.0
+celery==5.2.7
+drf-yasg==1.21.3
+stripe==4.0.2
+cryptography==37.0.4
+gunicorn==20.1.0

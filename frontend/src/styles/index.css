@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    background: #ffffff;
+    scrollbar-width: none;  /* Firefox */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-overflow-style: none;  /* IE and Edge */
+
+	font-size: var(--bs-body-font-size);
+	font-weight: var(--bs-body-font-weight);
+	line-height: var(--bs-body-line-height);
+	color: var(--bs-body-color);
+	text-align: var(--bs-body-text-align);
+	background-color: var(--bs-body-bg);
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.page-wrapper {
+	left: 0;
+	padding-top: 60px;
+	margin-left: 270px;
+	position: relative;
+	transition: all 0.3s
+ }
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header {
+    border-top: 1px solid rgba(173, 173, 173, 0.2);
+}
+
+/* @media only screen and (min-width: 991px) {
+	.mini-sidebar .page-wrapper {
+		margin-left: 75px;
+	}
+} */
+
