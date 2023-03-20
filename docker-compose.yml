@@ -21,7 +21,7 @@ services:
     build: 
       context: .
       dockerfile: ./backend/Dockerfile
-    command: python -m gunicorn core.wsgi:application --bind 0.0.0.0:${BACKEND_APP_PORT}
+    command: python -m gunicorn core.wsgi:application --bind 0.0.0.0:${BACKEND_APP_PORT} --log-level=debug --reload
     ports:
       - "${BACKEND_APP_PORT}:${BACKEND_APP_PORT}"
     restart: always
