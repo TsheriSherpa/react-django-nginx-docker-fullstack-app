@@ -171,3 +171,31 @@ SWAGGER_SETTINGS = {
     },
     'USE_SESSION_AUTH': False
 }
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": True,
+    "handlers": {
+        "file": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": "public/logs/app.log"
+        },
+        "console": {
+            "class": "logging.StreamHandler"
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "INFO",
+            "propagate": True
+        },
+        "": {
+            "handlers": ["file", "console"],
+            "level": "DEBUG",
+            "propagate": True
+        },
+    },
+}
