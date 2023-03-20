@@ -25,6 +25,8 @@ services:
     ports:
       - "${BACKEND_APP_PORT}:${BACKEND_APP_PORT}"
     restart: always
+    env_file:
+      - .env
     tty: true
     depends_on:
       - mysql
