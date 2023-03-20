@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_results',
     'rest_framework',
     'drf_yasg',
     'app',
@@ -172,7 +173,7 @@ SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': False
 }
 
-
+#logger config
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": True,
@@ -199,3 +200,10 @@ LOGGING = {
         },
     },
 }
+
+# Celery settings
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = "Asia/Kathmandu"
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = 'django-db'
