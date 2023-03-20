@@ -14,6 +14,8 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
     cap_add:
       - SYS_NICE 
+    networks:
+      - app-network
       
   backend:
     build: 
@@ -23,33 +25,30 @@ services:
     ports:
       - "${BACKEND_APP_PORT}:${BACKEND_APP_PORT}"
     restart: always
+    tty: true
     depends_on:
       - mysql
     volumes:
       - ./backend:/app
       - staticfiles:/app/staticfiles
-  
-  # frontend:
-  #   build:
-  #     context: .
-  #     dockerfile: ./frontend/Dockerfile
-  #   restart: always
-  #   volumes:
-  #     - frontend:/frontend/di
-  #   ports:
-  #     - "${FRONTEND_APP_PORT}:${FRONTEND_APP_PORT}"
+    networks:
+      - app-network
 
   nginx:
     build: 
       context: .
       dockerfile: ./nginx/Dockerfile
     restart: always
+    tty: true
     volumes:
       - staticfiles:/app/staticfiles
+      - ./frontend/dist:/var/www/html
     ports:
       - "80:80"
     depends_on:
       - backend
+    networks:
+      - app-network
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -61,7 +60,13 @@ services:
       PMA_ARBITRARY: 1
     restart: always
     ports:
-      - ${PHPMYADMIN_PORT}:80
+      - "${PHPMYADMIN_PORT}:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mysql_volume:
