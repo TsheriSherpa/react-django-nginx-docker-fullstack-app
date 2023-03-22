@@ -3,6 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+	entry: './src/index.js',
 	output: {
 		path: path.join(__dirname, "/dist"), // the bundle output path
 		filename: "bundle.js", // the name of the bundle
@@ -12,6 +13,9 @@ module.exports = {
 			template: "./public/index.html", // to import index.html file inside index.js
 		})
 	],
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	},
 	devServer: {
 		allowedHosts: "all",
 		port: 4000, // you can change the port
@@ -31,7 +35,7 @@ module.exports = {
 				use: ["style-loader", "css-loader", "sass-loader"],
 			},
 			{
-				test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
+				test: /\.(png|woff|woff2|eot|ttf|svg)$/i, // to import images and fonts
 				loader: "url-loader",
 				options: { limit: false },
 			},
